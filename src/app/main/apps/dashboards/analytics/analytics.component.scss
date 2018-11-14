@@ -1,0 +1,87 @@
+@import "src/@fuse/scss/fuse";
+
+#dashboard-analytics {
+
+    .main-widget {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fuse-card {
+        width: 200px;
+        display: inline-block;
+        margin: 20px;   
+    }
+    .logo {
+        background-size: 100% 100%;
+        margin: 0.5%;
+    }
+
+    .map-card {
+           
+    }
+            
+
+    .content {
+        display: flex;
+        flex: 1 1 auto;
+        padding: 32px;
+        min-width: 0;
+
+        @include media-breakpoint-down('md') {
+            flex-direction: column;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            min-width: 0;
+
+            .widget {
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex: 0 0 auto;
+            width: 320px;
+            min-width: 320px;
+            max-width: 320px;
+
+            @include media-breakpoint-down('md') {
+                flex: 1 0 100%;
+                margin-top: 32px;
+                width: 100%;
+                min-width: 0;
+                max-width: none;
+            }
+
+           
+        }
+    }
+
+    .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 48dp;  /* Preferred icon size */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+    }
+
+    div {
+        border-top-width: 10px;
+        border-right-width: 1em;
+        border-bottom-width: thick;
+        border-left-width: thin;
+    }
+
+}
