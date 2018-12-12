@@ -3,21 +3,22 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { FuseSharedModule } from '@fuse/shared.module';
+import { AddUsersComponent } from './add-users.component';
 
-import { CreateUserComponent } from './createUser.component';
+
 
 const routes = [
     {
-        path     : 'create/user',
-        component: CreateUserComponent
+        path: 'add-users',
+        component: AddUsersComponent
     }
 ];
 
 @NgModule({
     declarations: [
-        CreateUserComponent
+        AddUsersComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         MatButtonModule,
@@ -28,6 +29,5 @@ const routes = [
         FuseSharedModule
     ]
 })
-export class CreateUserModule
-{
-}
+// tslint:disable-next-line:class-name
+export class addModule {}

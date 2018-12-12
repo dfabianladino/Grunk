@@ -40,15 +40,27 @@
             <!-- / BREADCRUMB -->
 
             <!-- ADD FILE BUTTON -->
-            <div class="file-uploader">
-                <input hidden type="file" accept=".json" (change)="fileUpload($event)"/>
+            <!--<div class="file-uploader">
+                <input hidden  type="file" accept=".json" (change)="fileUpload($event)"/>
                 <button mat-fab
                         color="warn"
                         class="add-file-button"
-                        (click)="fileInput.click()"
                         aria-label="Add file"
                         [@animate]="{value:'*', params:{delay:'300ms',scale:'0.2'}}">
                     <mat-icon>add</mat-icon>
+                </button>
+            </div>-->
+
+            <div class="file-uploader">
+                <button mat-fab 
+                 color="warn"
+                 class="add-file-button"
+                 aria-label="Add file"
+                 [@animate]="{value:'*', params:{delay:'300ms',scale:'0.2'}}">
+                    <label mat-list-avatar>
+                        <mat-icon>add</mat-icon>
+                        <input id="file-upload" type="file" accept=".json" (change)="fileUpload($event)" [style.display]="'none'">
+                    </label>
                 </button>
             </div>
             <!-- / ADD FILE BUTTON -->

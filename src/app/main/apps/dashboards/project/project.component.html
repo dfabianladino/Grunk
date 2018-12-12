@@ -199,6 +199,101 @@
                     <div class="widget-group p-12" fxLayout="row wrap" fxFlex="100" *fuseIfOnDom
                          [@animateStagger]="{value:'50'}">
 
+                    <!-- WIDGET 10 -->
+                    <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="row" fxFlex="100">
+                        <!-- Front -->
+                        <div class="fuse-widget-front mat-elevation-z2">
+                    
+                            <div class="simple-table-container" ms-responsive-table>
+                                <div class=" table-title">
+                                    Informacion Detallada <input type="text" name="search" placeholder="Buscar">
+                                </div>
+                                <table class="simple">
+                    
+                                    <thead>
+                                        <tr>
+                                            <th *ngFor="let column of widgets.widget10.table.columns">
+                                                {{column.title}}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                    
+                                    <tbody>
+                                        <tr *ngFor="let item of daten">
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.date | date: 'd-MM-y HH:mm:ss'}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.nameharvester}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.idcombineharvester}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.tch}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.speed | number}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.dist}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.location.coordinates[0] | number}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.location.coordinates[1] | number}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="p-4">
+                                                    {{item.typecane}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- pager -->
+                    
+                                <div *ngIf="pager.pages && pager.pages.length" class="pagination">
+                                    <div [ngClass]="{disabled:pager.currentPage === 1}">
+                                        <a (click)="setPage(1)">Primero</a>
+                                    </div>
+                                    <div [ngClass]="{disabled:pager.currentPage === 1}">
+                                        <a (click)="setPage(pager.currentPage - 1)">&laquo;</a>
+                                    </div>
+                                    <div *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                        <a (click)="setPage(page)">{{page}}</a>
+                                    </div>
+                                    <div [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                        <a (click)="setPage(pager.currentPage + 1)">&raquo;</a>
+                                    </div>
+                                    <div [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                        <a (click)="setPage(pager.totalPages)">Final</a>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                        <!-- / Front -->
+                    
+                    </fuse-widget>
+                    <!-- / WIDGET 10 -->
                         <!-- WIDGET 1 -->
                         <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
                                      fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25" *ngFor="let item of detail">
@@ -769,11 +864,8 @@
                         <!-- WIDGET 10 -->
                         <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="row"
                                      fxFlex="100">
-
-                        
-
                             <!-- Front -->
-                            <div class="fuse-widget-front mat-elevation-z2">
+                            <!--<div class="fuse-widget-front mat-elevation-z2">
 
                                 <div class="simple-table-container" ms-responsive-table>
                                     <div class=" table-title">
@@ -839,7 +931,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <!-- pager -->
+                                    <- pager 
                                     
                                     <div *ngIf="pager.pages && pager.pages.length" class="pagination">
                                         <div [ngClass]="{disabled:pager.currentPage === 1}">
@@ -860,7 +952,7 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            </div>-->
                             <!-- / Front -->
 
                         </fuse-widget>

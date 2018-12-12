@@ -40,21 +40,28 @@ export const navigation: FuseNavigation[] = [
         icon: 'pages',
         children: [
             {
-                id: 'authentication',
+                id: 'add',
                 title: 'Crear Usuario',
                 type: 'collapsable',
                 icon: 'account_circle',
                 children: [
                     {
-                        id: 'login',
+                        id: 'add',
                         title: 'Crear Usuario',
                         type: 'item',
-                        url: '/pages/auth/login'
+                        url: '/pages/add/users'
                     }   
                 ]
             },  
         ]
         },
+    {
+        id: 'add-users',
+        title: 'Agregar Usuarios',
+        type: 'item',
+        icon: 'account_circle',
+        url: '/pages/create/user'
+    },
     {
         id: 'file-manager',
         title: 'Admistrador Archivos',

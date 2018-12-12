@@ -5,8 +5,8 @@
         <div class="position-relative p-24 blue-600"
              fxLayout="row" fxLayoutAlign="space-between center">
             <div fxLayout="column" fxLayoutAlign="start start">
-                <span class="h2">Visitors</span>
-                <span class="h5 secondary-text">Unique visitors by month</span>
+                <span class="h2">Productividad</span>
+                <span class="h5 secondary-text">Máquina por Mes</span>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center">
                 <div class="py-8 px-12 border-radius-2 line-height-1 mr-8 cursor-pointer"
@@ -66,20 +66,20 @@
                                     <mat-icon class="green-fg mr-2">update</mat-icon>
                                     <span>{{item.lastdayupdated | date: 'd-MM-y'}}</span>
                                 </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg" *ngIf="widgets.widget2.conversion.ofTarget < 0">
+                                <!--<div fxFlex="row" fxLayoutAlign="start center" class="red-fg" *ngIf="widgets.widget2.conversion.ofTarget < 0">
                                     <mat-icon class="red-fg mr-4">update</mat-icon>
                                     <span>{{widgets.widget2.conversion.ofTarget}}%</span>
-                                </div>
-                                <div class="ml-4 text-nowrap"></div>
+                                </div>-->
+                               
                             </div>
                 
                         </div>
                 
-                        <div class="h-96 w-100-p">
+                        <!--<div class="h-96 w-100-p">
                             <canvas baseChart [datasets]="widgets.widget2.datasets" [labels]="widgets.widget2.labels" [colors]="widgets.widget2.colors"
                                 [options]="widgets.widget2.options" [chartType]="widgets.widget2.chartType">
                             </canvas>
-                        </div>
+                        </div>-->
                 
                     </div>
                 
@@ -106,7 +106,7 @@
                                     <span>{{item.lastdayupdated | date: 'd-MM-y'}}</span>
                                 </div>
                                 <div fxFlex="row" fxLayoutAlign="start center" class="red-fg" *ngIf="widgets.widget3.impressions.ofTarget < 0">
-                                    <mat-icon class="red-fg mr-4">update</mat-icon>
+                                    <mat-icon class="green-fg mr-4">update</mat-icon>
                                     <span>{{item.lastdayupdated | date: 'd-MM-y'}}</span>
                                 </div>
                                 <div class="ml-4 text-nowrap"></div>
@@ -114,11 +114,11 @@
                 
                         </div>
                 
-                        <div class="h-96 w-100-p">
+                        <!--<div class="h-96 w-100-p">
                             <canvas baseChart [datasets]="widgets.widget3.datasets" [labels]="widgets.widget3.labels" [colors]="widgets.widget3.colors"
                                 [options]="widgets.widget3.options" [chartType]="widgets.widget3.chartType">
                             </canvas>
-                        </div>
+                        </div>-->
                 
                     </div>
                 
@@ -141,12 +141,9 @@
                             </div>
                 
                             <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
-                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg" *ngIf="widgets.widget4.visits.ofTarget > 0">
+
+                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg" *ngIf="widgets.widget4.visits.ofTarget < 0">
                                     <mat-icon class="green-fg mr-4">update</mat-icon>
-                                    <span>{{item.lastdayupdated | date: 'd-MM-y'}}</span>
-                                </div>
-                                <div fxFlex="row" fxLayoutAlign="start center" class="red-fg" *ngIf="widgets.widget4.visits.ofTarget < 0">
-                                    <mat-icon class="red-fg mr-4">update</mat-icon>
                                     <span>{{item.lastdayupdated | date: 'd-MM-y'}}</span>
                                 </div>
                                 <div class="ml-4 text-nowrap"></div>
@@ -154,16 +151,52 @@
                 
                         </div>
                 
-                        <div class="h-96 w-100-p">
+                        <!--<div class="h-96 w-100-p">
                             <canvas baseChart [datasets]="widgets.widget4.datasets" [labels]="widgets.widget4.labels" [colors]="widgets.widget4.colors"
                                 [options]="widgets.widget4.options" [chartType]="widgets.widget4.chartType">
                             </canvas>
-                        </div>
+                        </div>-->
                 
                     </div>
                 
                 </div>
                 <!-- / Widget 4 -->
+
+                <!-- Widget 5 -->
+                <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                
+                    <div class="fuse-card auto-width">
+                
+                        <div class="p-16 pb-0" fxLayout="row wrap" fxLayoutAlign="start end">
+                
+                            <div class="pr-16">
+                                <div class="h3 secondary-text">Productividad</div>
+                                <div class="font-size-54 font-weight-300 line-height-1 mt-8">
+                                    {{item.porcprodsem | number: '1.1-2'}}
+                                </div>
+                            </div>
+                
+                            <div class="py-4 font-size-16" fxLayout="row" fxLayoutAlign="start center">
+                
+                                <div fxFlex="row" fxLayoutAlign="start center" class="green-fg" *ngIf="widgets.widget4.visits.ofTarget < 0">
+                                    <mat-icon class="green-fg mr-4">update</mat-icon>
+                                    <span>{{item.lastdayupdated | date: 'd-MM-y'}}</span>
+                                </div>
+                                <div class="ml-4 text-nowrap"></div>
+                            </div>
+                
+                        </div>
+                
+                        <!--<div class="h-96 w-100-p">
+                                            <canvas baseChart [datasets]="widgets.widget4.datasets" [labels]="widgets.widget4.labels" [colors]="widgets.widget4.colors"
+                                                [options]="widgets.widget4.options" [chartType]="widgets.widget4.chartType">
+                                            </canvas>
+                        </div>-->
+                
+                    </div>
+                
+                </div>
+                <!-- / Widget 5 -->
                 </div>
             </div>
 
@@ -207,7 +240,7 @@
             <!-- / Widget 5 -->
 
             <!-- Widget 6 -->
-            <div class="pt-48 pb-24 font-size-18 font-weight-300">
+            <!--<div class="pt-48 pb-24 font-size-18 font-weight-300">
                 Where are your users?
             </div>
 
@@ -235,17 +268,17 @@
                     </agm-marker>
                 </agm-map>
 
-            </div>
+            </div>-->
             <!-- / Widget 6 -->
 
         </div>
 
-        <div class="right">
+        <!--<div class="right">
 
             <div fxLayout="row wrap" fxLayout.gt-md="column">
 
-                <!-- Widget 7 -->
-                <div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
+                 Widget 7 -->
+                <!--<div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
 
                     <div class="fuse-card">
 
@@ -305,11 +338,11 @@
 
                     </div>
 
-                </div>
+                </div>-->
                 <!-- / Widget 7 -->
 
                 <!-- Widget 8 -->
-                <div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
+                <!---<div class="mb-48" [ngClass.lt-lg]="'mr-32'" [ngClass.xs]="'mr-0'">
 
                     <div class="pb-24 font-size-18 font-weight-300">
                         How are your sales?
@@ -325,7 +358,7 @@
                                     <div class="h5 secondary-text">{{item._id.name}}</div>
                                 </div>
 
-                                <!--<div>
+                                <div>
                                     <button mat-icon-button [matMenuTriggerFor]="card19Menu" aria-label="more">
                                         <mat-icon>more_vert</mat-icon>
                                     </button>
@@ -344,7 +377,7 @@
                                             <span>Disable alerts</span>
                                         </button>
                                     </mat-menu>
-                                </div>-->
+                                </div>
                             </div>
 
                             <div class="p-16 pt-8" fxLayout="row" fxLayoutAlign="space-between end">
@@ -406,7 +439,7 @@
 
                     </div>
 
-                </div>
+                </div>-->
 
                 <!-- / Widget 8 -->
 
@@ -470,7 +503,8 @@
                     </div>
 
                 </div>-->
-                <!-- / widget 9 -->
+                <!-- / widget 9
+            
 
                 <agm-map [latitude]="lat" [longitude]="lng" [zoom]=13>
                     <agm-marker *ngFor="let lugar of daten" [latitude]="lugar.location.coordinates[0]" [longitude]="lugar.location.coordinates[1]"></agm-marker>
@@ -478,7 +512,7 @@
 
             </div>
 
-        </div>
+        </div>-->
 
     </div>
 

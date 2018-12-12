@@ -100,15 +100,15 @@ export class FileManagerComponent implements OnInit, OnDestroy
             const json = me.fileText;
             me.datos = json;
             console.log(me.datos);
-            me.messageSource.next(me.datos);
+            // me.messageSource.next(me.datos);
             if (me.datos) {
                 console.log('datos del if');
-                me.addFiles(me.datos);
+                // me.addFiles(me.datos);
             }
         };
     }
 
-    addFiles(file): void {
+    /* addFiles(file): void {
         console.log('carga de datos');
         console.log(this.datos);
         this._addFile.addFile(this.datos)
@@ -121,6 +121,6 @@ export class FileManagerComponent implements OnInit, OnDestroy
                 error => {
                     this.error = error;
                 });
-    }
+    }*/ 
 
 }

@@ -29,6 +29,9 @@ import { MatPaginatorModule } from '@angular/material';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { addModule } from './main/pages/add-users/add.module';
+import { CreateUserModule } from './main/pages/authentication/users/createUser.module';
+
 
 
 const appRoutes: Routes = [
@@ -43,12 +46,16 @@ const appRoutes: Routes = [
     {
         path : 'sample',
         redirectTo: '/sample'
+    },
+    {
+        path: 'add',
+        redirectTo: 'create/user'
     }    
 ];
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports     : [
         BrowserModule,
@@ -85,7 +92,9 @@ const appRoutes: Routes = [
         MatPaginatorModule,
         NgxPaginationModule,
         MatProgressSpinnerModule,
-        MatCardModule
+        MatCardModule,
+        addModule,
+        CreateUserModule
 
     ],
     providers: [
